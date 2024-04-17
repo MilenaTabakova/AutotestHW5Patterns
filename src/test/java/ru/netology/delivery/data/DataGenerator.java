@@ -35,6 +35,16 @@ public class DataGenerator {
         return faker.numerify("####");
     }
 
+    public static String generateWrongName(String locale) {
+        var faker = new Faker(new Locale(locale));
+        return faker.name().lastName();
+    }
+
+    public static String generateWrongCity(String locale) {
+        var faker = new Faker(new Locale(locale));
+        return faker.address().city();
+    }
+
     public static class Registration {
         private Registration() {
         }

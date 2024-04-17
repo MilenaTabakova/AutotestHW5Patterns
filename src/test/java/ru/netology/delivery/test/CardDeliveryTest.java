@@ -88,9 +88,9 @@ public class CardDeliveryTest {
         var daysToAddForSecondMeeting = 7;
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
         $("[data-test-id=city] input").setValue(validUser.getCity());
-        $("[data-test-id=date' input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id=date] input").setValue(firstMeetingDate);
-        $("[data-test-id=name] input").setValue("Иванов Артём");
+        $("[data-test-id=name] input").setValue(DataGenerator.generateWrongName("en"));
         $("[data-test-id=phone] input").setValue(validUser.getPhone());
         $("[data-test-id=agreement]").click();
         $("button.button").click();
@@ -128,7 +128,7 @@ public class CardDeliveryTest {
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
-        $("[data-test-id=city] input").setValue("Kostroma");
+        $("[data-test-id=city] input").setValue(DataGenerator.generateWrongCity("en"));
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id=date] input").setValue(firstMeetingDate);
         $("[data-test-id=name] input").setValue(validUser.getName());
